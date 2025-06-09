@@ -64,8 +64,8 @@ jobs:
       - name: Login to Docker 
         uses: docker/login-action@v2
         with:
-          username: ${{ secrets.DOCKER_USERNAME }}
-          password: 123456789
+          username: stbutcher
+          password: ${{ secrets.DOCKER_PASSWORD }}
 
 
       - name: Build and Push to DockerHub
@@ -73,7 +73,7 @@ jobs:
         with:
           context: ./backend/
           push: true
-          tags: ${{ secrets.DOCKER_USERNAME }}/taski_backend:latest
+          tags: stbutcher/taski_backend:latest
 
 
 
